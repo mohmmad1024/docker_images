@@ -1,4 +1,4 @@
 *
 !.gitignore
 !*.ipynb
-!data/*
+!data/
