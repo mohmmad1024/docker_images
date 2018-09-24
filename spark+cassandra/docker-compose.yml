@@ -1,0 +1,17 @@
+version: '3'
+services:
+  spark:
+    image: mohmmad1024/saprk-cassandra-jupyter 
+    build: .
+    ports:
+      - "8881:8888"
+    volumes:
+      - ./notebooks:/home/jovyan/work/
+    command: start-notebook.sh --NotebookApp.token=Aa123
+    depends_on:
+      - cassandra
+  cassandra:
+    image: cassandra:3
+    volumes:
+      - ./cassandra:/var/lib/cassandra
+
